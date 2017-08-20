@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>yCalculate</title>
+	<style type="text/css">
+
+		html, body {
+			height: 100%;   
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+
+		body{
+			padding: 0;
+			margin:0;
+			background-color: #afafaf;
+			font: 14px;
+
+			-webkit-user-select: none;  /* Chrome all / Safari all /opera15+*/  
+			-moz-user-select: none;     /* Firefox all */  
+			-ms-user-select: none;      /* IE 10+ */  
+			user-select: none;  
+		}
+		#total{
+			width: 100%;
+			height: 100%;
+			min-width: 300px;
+			max-width:  640px;
+			margin: 0 auto;
+			overflow: hidden;
+			background-color: #333;
+			box-shadow: 0px 0px 5px 2px #555555;
+
+		}
+
+		header{
+			width: 100%;
+			height: 25%;
+			box-sizing: border-box;
+
+		}
+
+		header input{
+			display: block;
+			color: #fff;
+			height: 50%;
+			width: 100%;
+			background-color: transparent;
+			border: none;
+			font-size: 45px;
+			text-align: right;
+			font-weight: bolder;
+			margin:0 -2%;
+		}
+
+		main{
+			width: 100%;
+			height: 75%;
+		}
+
+		main ul{
+			list-style: none;	
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
+
+		main ul li{
+			width: 25%;
+			height: 20%;
+			float: left;
+			color: #fff;
+			font-size: 26px;
+			text-align: center;
+			border-left: 1px solid #000;
+			border-top: 1px solid #000;
+			box-sizing: border-box;
+
+		}
+
+		main ul li:before {
+			display: inline-block;
+			content: "";
+			height:100%;
+			vertical-align:middle;
+		}
+
+
+		.sign{
+			background-color: #f5923e;
+		}
+		.FC{
+			border-left: 1px solid transparent;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="total">
+		<header>
+			<input type="text" id="sum" value="" readonly>
+			<input type="text" id="content" value="0" readonly>
+		</header>
+		<main>
+			<ul>
+				<li class="sign FC">AC</li>
+				<li class="sign">&larr;</li>
+				<li class="sign">mod</li>
+				<li class="sign">+</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li class="sign">-</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li class="sign">&times;</li>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li class="sign">&divide;</li>
+				<li>.</li>
+				<li>0</li>
+				<li>PI</li>
+				<li class="sign">=</li>
+
+			</ul>
+		</main>
+	</div>
+</body>
+</html>
