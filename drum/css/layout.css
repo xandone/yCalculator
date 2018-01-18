@@ -1,0 +1,44 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 10px;
+    font-family: "微软雅黑", "sans-serif";
+}
+.bg {
+    width: 100vw;
+    height: 100vh;
+    background: url("../imgs/bg.jpg") left center no-repeat;
+    background-size: cover;
+}
+.bg .keys {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex: 1;
+}
+.key {
+    border: .2rem solid rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1.5rem .5rem;
+    transition: all .15s ease;
+    width: 10rem;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 0.5rem black;
+    box-shadow: 0 0 0.5 rgba(0, 0, 0, 0.4);
+}
+kbd {
+    display: block;
+    font-size: 4rem;
+}
+.play {
+    transform: scale(1.2);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+}
