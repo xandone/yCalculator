@@ -1,10 +1,9 @@
 	
 
 var Main={
-	isFirst: 123, 
+	temp: 0, 
 	description:document.getElementById("sum"),
 	inClick:function (number) {
 		this.description.value=number;
 	}
-
 }	
