@@ -49,6 +49,10 @@
 		},
 
 		cal: function(number) {
+			var last_str = this.summer.charAt(this.summer.length - 1);
+			if (last_str === '+' || last_str === '-' || last_str === 'x' || last_str === '/') {
+				return;
+			}
 			this.summer = '0';
 			this.result.value = this.summer;
 		}
