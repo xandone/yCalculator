@@ -6,15 +6,16 @@
 	<style type="text/css">
 
 		html, body {
-			height: 100%;   
+			height: 500px; 
+			width: 300px;  
 			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 		}
 
 		body{
 			padding: 0;
 			margin:0;
-			background-color: #afafaf;
-			font: 14px;
+			background-color: #fff;
+			font: 12px;
 
 			-webkit-user-select: none;  /* Chrome all / Safari all /opera15+*/  
 			-moz-user-select: none;     /* Firefox all */  
@@ -24,8 +25,8 @@
 		#total{
 			width: 100%;
 			height: 100%;
-			min-width: 300px;
-			max-width:  640px;
+			min-width: 100px;
+			max-width:  300px;
 			margin: 0 auto;
 			overflow: hidden;
 			background-color: #333;
@@ -88,7 +89,7 @@
 
 
 		.sign{
-			background-color: #f5923e;
+			background-color: #999;
 		}
 		.FC{
 			border-left: 1px solid transparent;
@@ -101,7 +102,6 @@
 	<div id="total">
 		<header>
 			<input type="text" id="sum" value="" readonly>
-			<a href="http://localhost:8080/First/rig" target="_blank">本地</a>
 			<input type="text" id="content" value="0" readonly>
 		</header>
 		<main>
@@ -109,21 +109,21 @@
 				<li class="sign FC">AC</li>
 				<li class="sign">&larr;</li>
 				<li class="sign">mod</li>
-				<li class="sign">+</li>
-				<li onclick="Main.inClick(7)">7</li>
-				<li onclick="Main.inClick(8)">8</li>
-				<li onclick="Main.inClick(9)">9</li>
-				<li class="sign">-</li>
-				<li onclick="Main.inClick(4)">4</li>
-				<li onclick="Main.inClick(5)">5</li>
-				<li onclick="Main.inClick(6)">6</li>
-				<li class="sign">&times;</li>
-				<li onclick="Main.inClick(1)">1</li>
-				<li  onclick="Main.inClick(2)">2</li>
-				<li onclick="Main.inClick(3)">3</li>
-				<li class="sign">&divide;</li>
+				<li class="sign" onclick="Main.inClick('+')">+</li>
+				<li onclick="Main.inClick('7')">7</li>
+				<li onclick="Main.inClick('8')">8</li>
+				<li onclick="Main.inClick('9')">9</li>
+				<li class="sign" onclick="Main.inClick('-')">-</li>
+				<li onclick="Main.inClick('4')">4</li>
+				<li onclick="Main.inClick('5')">5</li>
+				<li onclick="Main.inClick('6')">6</li>
+				<li class="sign" onclick="Main.inClick('x')">&times;</li>
+				<li onclick="Main.inClick('1')">1</li>
+				<li onclick="Main.inClick('2')">2</li>
+				<li onclick="Main.inClick('3')">3</li>
+				<li class="sign" onclick="Main.inClick('/')">&divide;</li>
 				<li onclick="Main.inClick('.')">.</li>
-				<li onclick="Main.inClick(0)">0</li>
+				<li onclick="Main.inClick('0')">0</li>
 				<li onclick="Main.inClick('PI')">PI</li>
 				<li class="sign">=</li>
 
@@ -131,9 +131,5 @@
 		</main>
 	</div>
 	<script type="text/javascript" src="./js/xmain.js"></script>
-	<script >
-		alert("helloworld")
-
-	</script>
 </body>
 </html>
