@@ -6,7 +6,7 @@
 	<style type="text/css">
 
 		html, body {
-			height: 500px; 
+			height: 600px; 
 			width: 300px;  
 			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 		}
@@ -101,8 +101,8 @@
 <body>
 	<div id="total">
 		<header>
-			<input type="text" id="sum" value="" readonly>
-			<input type="text" id="content" value="0" readonly>
+			<input type="text" id="content" value="" readonly>
+			<input type="text" id="result" value="0" style="color: #FFCE44" size="60px" readonly>
 		</header>
 		<main>
 			<ul>
@@ -125,7 +125,7 @@
 				<li onclick="Main.inClick('.')">.</li>
 				<li onclick="Main.inClick('0')">0</li>
 				<li onclick="Main.inClick('PI')">PI</li>
-				<li class="sign">=</li>
+				<li class="sign"onclick="Main.inClick('=')">=</li>
 
 			</ul>
 		</main>

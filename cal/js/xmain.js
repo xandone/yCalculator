@@ -8,13 +8,16 @@
 		signNumber: "",
 		summer: '',
 
-		result: document.getElementById('sum'),
+		content: document.getElementById('content'),
+		result: document.getElementById('result'),
+
 
 		inClick: function(number) {
 
 			var last_str = this.summer.charAt(this.summer.length - 1);
 
 			switch (number) {
+				case '0':
 				case '1':
 				case '2':
 				case '3':
@@ -58,11 +61,16 @@
 					break;
 
 			}
-
-			this.result.value = this.summer;
+			this.content.value = this.summer;
 
 		},
 
+		/**
+		 * [cal description]
+		 * @param  {[String]} summer [显示的字符]
+		 * @param  {[String]} number [字符中的加减乘除]
+		 * @return {[type]}        [description]
+		 */
 		cal: function(summer, number) {
 			this.numA = parseInt(summer.substring(0, summer.indexOf(number)));
 			this.numB = parseInt(summer.substring(summer.indexOf(number) + 1));
@@ -85,6 +93,7 @@
 			}
 
 			this.summer = summer;
+			this.content.value = this.summer;
 			this.result.value = this.summer;
 			// 计算一次，重置一次
 			this.hasSign = false;
