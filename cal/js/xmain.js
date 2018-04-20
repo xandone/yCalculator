@@ -1,7 +1,6 @@
 	'use strict'
 
 	var Main = {
-		temp: 0,
 		numA: 0,
 		numB: 0,
 		hasSign: false,
@@ -59,6 +58,13 @@
 					}
 					this.cal(this.summer, this.signNumber);
 					break;
+				case 'backspace':
+					if (this.summer.length > 1) {
+						this.summer = this.summer.substring(this.summer.length - 1);
+					} else {
+						this.summer = '0';
+					}
+					break;
 
 			}
 			this.content.value = this.summer;
@@ -98,6 +104,16 @@
 			// 计算一次，重置一次
 			this.hasSign = false;
 			this.signNumber = '';
-		}
+		},
 
+		reset: function() {
+			this.hasSign = false;
+			this.signNumber = '';
+			this.summer = '0';
+			this.content.value = '0';
+			this.result.value = '0';
+			this.numA = 0;
+			this.numB = 0;
+
+		}
 	}
