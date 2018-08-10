@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    body {
+        background: #ccc;
+    }
+
+    #canvas {
+        background: #fff;
+        margin-bottom: 10px;
+        display: inline-block;
+        border: 1px dashed #333;
+    }
+
+    #root {
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    #can0 {}
+
+    .block {
+        width: 30px;
+        height: 30px;
+        background: black;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin: 4px;
+        float: left;
+    }
+
+    .round1 {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        background: black;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div id="can0">
+            <canvas id="canvas" width="800" height="500">
+                <!--  canvas的width和height若写道css中，会出现问题，待考究 -->
+            </canvas>
+        </div>
+        <input type="button" name="" value="重置" />
+        <div id="">
+            <ul>
+                <li>
+                    <div class="block"></div>
+                </li>
+                <li>
+                    <div class="block"></div>
+                </li>
+                <li>
+                    <div class="block"></div>
+                </li>
+                <li>
+                    <div class="block"></div>
+                </li>
+                <li>
+                    <div class="block"></div>
+                </li>
+                <li>
+                    <div class="block"></div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <div class="round1"></div>
+                </li>
+                <li>
+                    <div class="round1"></div>
+                </li>
+                <li>
+                    <div class="round1"></div>
+                </li>
+                <li>
+                    <div class="round1"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+var arr = document.getElementsByClassName('block');
+var btns = document.getElementsByTagName('input');
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+
+var colors = ['black', 'red', 'blue', 'green', 'pink', 'yellow'];
+var linecolor = 'black';
+var onoff = false;
+var oldx = -10;
+var oldy = -10;
+var linw = 2;
+
+for (var i = 0; i < arr.length; i++) {
+    arr[i].style.background = colors[i];
+    changeColor(i);
+}
+
+function changeColor(i) {
+    arr[i].onclick = function() {
+        console.log(i);
+        linecolor = arr[i].style.background;
+    }
+}
+
+btns[0].onclick = function() {
+    context.beginPath();
+    context.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+
+//添加鼠标移动事件
+canvas.addEventListener("mousemove", draw, true);
+//添加鼠标按下事件
+canvas.addEventListener("mousedown", down, false);
+//添加鼠标弹起事件
+canvas.addEventListener("mouseup", up, false);
+
+
+function down() {
+    onoff = true;
+    oldx = event.clientX - canvas.offsetLeft;
+    oldy = event.clientY - canvas.offsetTop;
+
+    console.log(oldx + "     " + oldy);
+}
+
+function draw() {
+    if (true == onoff) {
+        //移动时的新坐标做画线的终止坐标
+        var newx = event.clientX - canvas.offsetLeft;
+        var newy = event.clientY - canvas.offsetTop;
+        context.beginPath();
+        context.moveTo(oldx, oldy);
+        context.lineTo(newx, newy);
+        context.strokeStyle = linecolor;
+        context.lineWidth = linw;
+        context.lineCap = "round";
+        //完成画线
+        context.stroke();
+
+        //设置本次坐标为下次画线的起始坐标
+        oldx = newx;
+        oldy = newy;
+    }
+}
+
+function up() {
+    onoff = false;
+    oldx = -10;
+    oldy = -10;
+}
+</script>
+
+</html>
