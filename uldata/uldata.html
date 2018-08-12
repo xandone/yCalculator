@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    #container {
+        width: 1000px;
+        margin: 150px auto;
+    }
+
+    #header {
+        border-bottom: 3px solid red;
+        height: 30px;
+    }
+
+    #header li {
+        float: left;
+        margin-left: 10px;
+        font-weight: bolder;
+        height: 30px;
+        width: 90px;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    #header li:hover {
+        cursor: pointer;
+    }
+
+    #header .back {
+        background: red;
+        color: #fff;
+    }
+
+    #listContent li {
+        height: 25px;
+        line-height: 25px;
+    }
+
+    #listContent a:hover {}
+    /* #tips { background: red; position: absolute; }*/
+
+    #tips {
+        padding: 5px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 400px;
+        border: 2px solid #FF7700;
+        background-color: white;
+        display: none;
+    }
+
+    #tips li {
+        width: 180px;
+        height: 30px;
+        float: left;
+        border-bottom: 1px solid #ccc;
+        line-height: 30px;/*行高，通常用于文字，height则是定义元素自身的高度*/
+    }
+    </style>
+    <script type="text/javascript" src="datas.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+        var container = document.getElementById('container');
+        var header = document.getElementById('header');
+        var listContent = document.getElementById('listContent');
+        var tips = document.getElementById('tips');
+        var arrow = document.getElementById('arrow');
+        var tipsContent = document.getElementById('tipsContent');
+
+        for (var i = 0; i < mydata.length; i++) {
+            console.log(mydata[i].name);
+            header.innerHTML += '<li>' + mydata[i].name + '</li>';
+        }
+
+        var header_li = header.getElementsByTagName('li');
+
+        header_li[0].className = 'back';
+
+        for (var i = 0; i < header_li.length; i++) {
+            header_li[i].index = i;
+            header_li[i].onclick = function() {
+                for (var j = 0; j < header_li.length; j++) {
+                    header_li[j].className = '';
+                    listContent.innerHTML = '';
+                    tipsContent.innerHTML='';
+                }
+                this.className = 'back';
+                fun(mydata[this.index]);
+            }
+        }
+
+        fun(mydata[0]);
+
+        function fun(da) {
+            var ul = document.createElement('ul');
+            for (var i = 0; i < da.list.length; i++) {
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+                a.innerHTML = da.list[i].title;
+                a.href = 'javascript:,';
+                li.appendChild(a);
+                ul.appendChild(li);
+                listContent.appendChild(ul);
+
+                a.index = i;
+
+                var h4 = document.createElement('h4');
+                var lis1 = document.createElement('li');
+                var lis2 = document.createElement('li');
+                var lis3 = document.createElement('li');
+                var lis4 = document.createElement('li');
+                var lis5 = document.createElement('li');
+                var lis6 = document.createElement('li');
+
+                a.onmouseover = function() {
+                    // alert(da.list[this.index].company);
+
+                    tips.style.display = "block";
+                    tips.style.left = container.offsetLeft + this.offsetWidth + 10 + 'px';
+                    tips.style.top = this.offsetTop + this.scrollTop + 'px';
+
+
+                    h4.innerHTML = da.list[this.index].company;
+                    lis1.innerHTML = da.list[this.index].recruitingNumbers;
+                    lis2.innerHTML = da.list[this.index].workingLocation;
+                    lis3.innerHTML = da.list[this.index].workExperience;
+                    lis4.innerHTML = da.list[this.index].education;
+                    lis5.innerHTML = da.list[this.index].wage;
+                    lis6.innerHTML = da.list[this.index].addDate;
+
+                    tipsContent.appendChild(h4);
+                    tipsContent.appendChild(lis1);
+                    tipsContent.appendChild(lis2);
+                    tipsContent.appendChild(lis3);
+                    tipsContent.appendChild(lis4);
+                    tipsContent.appendChild(lis5);
+                    tipsContent.appendChild(lis6);
+                }
+
+                a.onmouseout = function() {
+                    tips.style.display = 'none';
+                }
+
+            }
+
+        }
+
+    }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <ul id="header"></ul>
+        <div id="listContent"></div>
+    </div>
+    <div id="tips">
+        <span id="arrow"></span>
+        <div id="tipsContent"></div>
+    </div>
+</body>
+
+</html>
