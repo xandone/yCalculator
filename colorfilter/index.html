@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    ul {
+        list-style: none;
+        display: inline-block;
+    }
+
+    li {
+        float: left;
+        margin-left: 10px;
+    }
+
+    img {
+        width: 300px;
+        height: 300px;
+    }
+
+    #color1 {
+        filter: none;
+    }
+
+    #color2 {
+        filter: blur(3px);
+    }
+
+    #color3 {
+        filter: brightness(50%);
+    }
+
+    #color4 {
+        filter: invert(80%);
+    }
+
+    #color5 {
+        filter: hue-rotate(70deg);
+    }
+    /*灰度图片*/
+
+    #color6 {
+        filter: grayscale(80%);
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><img id="color1" src="a.jpg" alt="" title=""></li>
+            <li><img id="color2" src="a.jpg" alt="" title=""></li>
+            <li><img id="color3" src="a.jpg" alt="" title=""></li>
+        </ul>
+        <ul>
+            <li><img id="color4" src="a.jpg" alt="" title=""></li>
+            <li><img id="color5" src="a.jpg" alt="" title=""></li>
+            <li><img id="color6" src="a.jpg" alt="" title=""></li>
+        </ul>
+    </div>
+</body>
+
+</html>
