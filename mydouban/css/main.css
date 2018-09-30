@@ -1,0 +1,416 @@
+#header {
+    width: 100%;
+    height: 35px;
+    background-color: #333;
+}
+
+#header-left ul {
+    margin-left: 10px;
+}
+
+#header-left ul li {
+    float: left;
+    list-style: none;
+    height: 35px;
+    vertical-align: middle;
+    line-height: 35px;
+}
+
+#header a {
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 15px;
+    color: #ccc;
+}
+
+#header a:hover {
+    color: #fff;
+}
+
+#header-right ul {
+    float: right;
+    margin-right: 10px;
+}
+
+#header-right ul li {
+    float: left;
+    list-style: none;
+    line-height: 35px;
+}
+
+#header-right span img {
+    display: none;
+    position: absolute;
+    right: 100px;
+}
+
+#my-account {
+    position: absolute;
+    display: none;
+    border: 1px solid #F0F0F0;
+    text-align: center;
+    float: none;
+}
+
+#my-account li {
+    list-style: none;
+    text-align: center;
+    float: none;
+    height: 30px;
+    width: 80px;
+}
+
+#my-account li a {
+    font-size: 12px;
+    color: #333;
+    height: 30px;
+}
+
+
+
+
+
+
+
+
+/*a和hover之间不能有空格，否则css无效*/
+
+#my-account li a:hover {
+    background-color: #999;
+}
+
+#top-header {
+    height: 90px;
+    width: 100%;
+    background-color: #f0f3f5;
+}
+
+
+#top-header-middle {
+    height: 100px;
+    text-align: center;
+}
+
+#top-header-middle img,
+input {
+    vertical-align: middle;
+}
+
+#top-header-ul {
+    vertical-align: middle;
+}
+
+#top-header-ul {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+#top-header-ul li {
+    float: left;
+    list-style: none;
+    margin-left: 20px;
+}
+
+#top-header-ul li a {
+    text-decoration: none;
+    color: #007622;
+}
+
+#top-header-ul li a:hover {
+    background-color: #007622;
+    color: white;
+}
+
+#top-header-middle input {
+    margin-left: 50px;
+    width: 250px;
+    height: 25px;
+    background: #fff url(../imgs/main/0.png) no-repeat 230px center;
+    border: 1px solid #ccc;
+}
+
+#share {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#share-ul {
+    text-align: center;
+}
+
+#share-ul li {
+    float: left;
+    list-style: none;
+    margin-left: 10px;
+}
+
+#share-ul li img {
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+#share-ul a {
+    font-size: 12px;
+    color: #999;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+#share-ul a:hover {
+    cursor: pointer;
+}
+
+#share span {
+    font-size: 12px;
+    color: #999;
+    margin-left: 50px;
+}
+
+#share input {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+    width: 600px;
+    height: 30px;
+    padding-left: 15px;
+    background: #fff url(../imgs/main/6.png) no-repeat 580px center;
+    border: 1px solid #ccc;
+}
+
+#main-body{
+	width: 980px;
+    margin: 0 auto;
+	border-bottom: 1px dashed #333;
+}
+
+#content {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#content-list {
+    margin-top: 15px;
+    float: left;
+}
+
+
+#content-list img {
+    float: left;
+}
+
+
+
+
+/*必须设置了height才能设置margin-bottom*/
+
+#content-list ul li {
+    list-style: none;
+    width: 620px;
+    height: 170px;
+    margin-bottom: 15px;
+    border-bottom: 1px #ddd solid;
+}
+
+#content-list ul li:last-child {
+    border-bottom: none;
+}
+
+#content-list li span {
+    font-size: 12px;
+    color: #999;
+}
+
+#content-list li span strong {
+    color: #000;
+}
+
+#content-list h5 a {
+    text-decoration: none;
+    color: #3276ab;
+}
+
+#content-list h5 a:hover {}
+
+#content-list-text {
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+}
+
+#content-list-text img {
+    float: right;
+}
+
+
+
+
+
+
+
+
+/*width超过了li的宽度，会自动换行*/
+
+#content-list-text div {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-top: 10px;
+    width: 530px;
+}
+
+#page {
+    width: 400px;
+    margin: 20px auto;
+    overflow: auto;
+}
+
+#page ul {
+    display: inline-block;
+}
+
+#page ul li {
+    list-style: none;
+    float: left;
+    margin-left: 10px;
+}
+
+#page a,
+#page span {
+    font-size: 14px;
+    color: #555;
+}
+
+#page a {
+    text-decoration: none;
+    padding: 0 3px;
+}
+
+#page li:first-child a {
+    color: #fff;
+    background: #83bf72;
+}
+
+#page li a:hover {
+    background: #3276ab;
+}
+
+#page ul span li a {
+    vertical-align: middle;
+}
+
+#content-right {
+    width: 260px;
+    float: right;
+}
+
+#content-right-now {
+    background-color: #f0f3f5;
+    padding: 10px;
+}
+
+#content-right-now a {
+    text-decoration: none;
+    color: #3276ab;
+}
+
+#content-right-now ul li {
+    list-style: none;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#content-right img {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#hot-topic span {
+    font-size: 20px;
+    color: #3276ab;
+}
+
+#hot-topic {
+    margin-top: 15px;
+}
+
+#hot-topic a {
+    float: right;
+    color: #3276ab;
+    font-size: 12px;
+    line-height: 30px;
+}
+
+.content-right-count {
+    float: right;
+}
+
+#content-right-topic-ul {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+#content-right-topic-ul a {
+    text-decoration: none;
+}
+
+#content-right-topic-ul li {
+    line-height: 20px;
+    list-style: none;
+    margin-top: 8px;
+}
+
+#content-right-topic-ul li a {
+    color: #3276ab;
+}
+
+#my-follow {
+    margin-top: 20px;
+}
+
+#my-follow span {
+    font-size: 20px;
+    color: #3276ab;
+}
+
+#my-follow-people {
+    float: right;
+}
+
+#my-follow a {
+    color: #3276ab;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+#my-follow a:hover {
+    text-decoration: underline;
+}
+
+.my-follow-float-r{
+	float: right;
+}
+
+.content-normal p{
+	margin-top: 5px;
+	font-size: 12px;
+	color: #666;
+}
+
+
+#footer{
+	width: 950px;
+	margin: 20px auto;
+	font-size: 12px;
+}
+
+#footer span{
+	color: #aaa;
+
+}
+
+#footer a{
+	float: right;
+	text-decoration: none;
+	color: #3276ab;
+}

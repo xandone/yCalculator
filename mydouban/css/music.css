@@ -1,0 +1,253 @@
+#music-header {
+    height: 120px;
+    width: 100%;
+    background-color: #f0f3f5;
+}
+
+#music-search {
+    padding-top: 20px;
+    width: 950px;
+    margin: 0 auto;
+}
+
+#music-search-text strong {
+    font-size: 25px;
+    color: #F2901C;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*230px需要位于center之前*/
+
+#music-search-text input {
+    line-height: 25px;
+    margin-left: 30px;
+    font-size: 14px;
+    padding-left: 5px;
+    width: 250px;
+    background: url(../imgs/main/0.png) no-repeat 230px center #fff;
+    border: 1px solid #ccc;
+}
+
+#music-header hr {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.music-ul li {
+    float: left;
+    font-size: 12px;
+    list-style: none;
+    margin-right: 15px;
+}
+
+.music-ul a {
+    text-decoration: none;
+    color: #666;
+}
+
+a:hover {
+    color: white;
+}
+
+#music-main {
+    padding-top: 30px;
+    width: 950px;
+    margin: 0 auto;
+    border-bottom: 1px dashed #333;
+    overflow: auto;
+}
+
+#music-right {
+    float: right;
+    width: 300px;
+}
+
+.music-show1 {
+    font-size: 16px;
+    color: #333;
+}
+
+.music-show2 {
+    font-size: 12px;
+    color: #666;
+}
+
+.music-p-hr {
+    border-bottom: 2px solid #008000;
+}
+
+#music-show-list {
+    background-color: #f0f3f5;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+#music-show-list ul {
+    text-align: center;
+    overflow: auto;
+}
+
+
+
+
+
+
+
+
+
+/*给li设置了浮动之后它就脱离当前正常的文档流，所以没办法撑开外层ul的高度,
+表象music-show-list的背景无效*/
+
+#music-show-list ul li {
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.music-a-1 {
+    text-decoration: none;
+    color: #008000;
+    font-size: 16px;
+}
+
+.music-a-2 {
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+}
+
+li {
+    list-style: none;
+}
+
+#music-btn {
+    float: right;
+}
+
+#btn1,
+#btn2 {
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    background-color: #23ab88;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+#btn1 {
+    background-color: #80cfbb;
+}
+
+#music-rec {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #008000;
+}
+
+.music-rec-list {
+    padding: 10px;
+    background-color: #f0f3f5;
+    padding-bottom: 50px;
+}
+
+.music-rec-list ul {
+    overflow: auto;
+}
+
+.music-rec-list li {
+    float: left;
+    padding: 10px;
+    background-color: white;
+}
+
+.music-rec-list-p {
+    font-size: 12px;
+    color: #666;
+}
+
+.music-rec-list li {
+    width: 160px;
+    margin-left: 10px;
+}
+
+.music-rec-list li img {
+    width: 100%;
+}
+
+.music-show {
+    display: block;
+}
+
+.music-hide {
+    display: none;
+}
+
+#music-footer {
+    width: 950px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#music-left {
+    width: 600px;
+    float: left;
+}
+
+#music-left-slide {
+    margin-bottom: 20px;
+    width: 600px;
+    height: 250px;
+    position: relative;
+}
+
+#music-left-slide img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    opacity: 0;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes picshow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pichide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.picshow {
+    animation-name: picshow;
+}
+
+.pichide {
+    animation-name: pichide;
+}
