@@ -10,6 +10,7 @@ var bgWidth;
 var bgHeight;
 
 var ane;
+var food;
 
 document.body.onload = game;
 
@@ -36,10 +37,16 @@ function init() {
     ane = new aneObj();
     ane.init();
 
+    food=new foodObj();
+    food.init();
+    food.born();
+
 }
 
 function gameloop() {
     window.requestAnimationFrame(gameloop)
     drawbg();
     ane.drawAne();
+
+   food.drawFoods();
 }
