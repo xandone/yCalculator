@@ -12,6 +12,9 @@ var bgHeight;
 var ane;
 var food;
 
+var lastTime;
+var deltaTime;
+
 document.body.onload = game;
 
 function game() {
@@ -22,6 +25,9 @@ function game() {
 
 
 function init() {
+    lastTime = Date.now();
+    deltaTime = 0;
+
     can1 = document.getElementById('can1');
     can2 = document.getElementById('can2');
 
@@ -37,16 +43,23 @@ function init() {
     ane = new aneObj();
     ane.init();
 
-    food=new foodObj();
+    food = new foodObj();
     food.init();
-    food.born();
-
 }
 
 function gameloop() {
-    window.requestAnimationFrame(gameloop)
+    window.requestAnimationFrame(gameloop);
+    var now = Date.now();
+    deltaTime = now - lastTime;
+    lastTime = now;
+
+    if (deltaTime > 40) {
+        deltaTime = 40;
+    }
+
     drawbg();
     ane.drawAne();
 
-   food.drawFoods();
+    food.monitor();
+    food.drawFoods();
 }
