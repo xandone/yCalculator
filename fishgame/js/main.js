@@ -11,9 +11,13 @@ var bgHeight;
 
 var ane;
 var food;
+var mom;
 
 var lastTime;
 var deltaTime;
+
+var mouseX;
+var mouseY;
 
 document.body.onload = game;
 
@@ -45,6 +49,14 @@ function init() {
 
     food = new foodObj();
     food.init();
+
+    mom = new momObj();
+    mom.init();
+
+    mouseX = 0;
+    mouseY = 0;
+
+    can2.addEventListener('mousemove', onMouseMove, false);
 }
 
 function gameloop() {
@@ -62,4 +74,14 @@ function gameloop() {
 
     food.monitor();
     food.drawFoods();
+
+    ctx2.clearRect(0, 0, bgWidth, bgHeight);
+    mom.drawMom();
+}
+
+function onMouseMove(e) {
+    if (e.offSetX || e.layerX) {
+        mouseX = e.offSetX == undefined ? e.layerX : e.offSetX;
+        mouseY = e.offSetY == undefined ? e.layerY : e.offSetY;
+    }
 }

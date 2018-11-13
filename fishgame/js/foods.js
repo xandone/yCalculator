@@ -15,7 +15,7 @@ foodObj.prototype.init = function() {
         this.x[i] = 0;
         this.y[i] = 0;
         this.isLive[i] = false;
-        this.speed[i] = Math.random() * 0.007 + 0.003;
+        this.speed[i] = Math.random() * 0.027 + 0.03;
         this.len[i] = 0;
     }
 
@@ -55,8 +55,6 @@ foodObj.prototype.monitor = function() {
             count++;
         }
     }
-
-    console.log("creatte..." + count);
 
     if (count < 15) {
         this.createFoods();
