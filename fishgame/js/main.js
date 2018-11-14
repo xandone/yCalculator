@@ -77,6 +77,8 @@ function gameloop() {
 
     ctx2.clearRect(0, 0, bgWidth, bgHeight);
     mom.drawMom();
+
+    coll();
 }
 
 function onMouseMove(e) {

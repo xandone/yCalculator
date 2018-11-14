@@ -30,6 +30,10 @@ foodObj.prototype.born = function(i) {
     this.isLive[i] = true;
 }
 
+foodObj.prototype.dead = function(i) {
+    this.isLive[i] = false;
+}
+
 foodObj.prototype.drawFoods = function() {
     for (var i = 0; i < this.num; i++) {
         if (this.isLive[i]) {
