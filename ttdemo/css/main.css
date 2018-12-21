@@ -25,10 +25,11 @@
 }
 
 #weather_details {
+    z-index: 10;
     display: none;
     width: 200px;
     height: 110px;
-    background-color: white;
+    background-color: #fff;
     padding: 0;
     border: 1px solid #e8e8e8;
     padding: 10px;
@@ -69,6 +70,7 @@ ul {
 #weather_details li {
     float: left;
     margin-right: 20px;
+    text-align: center;
 }
 
 .weather_img_div {}
@@ -76,4 +78,78 @@ ul {
 .weather_img_div img {
     width: 40px;
     height: 40px;
+}
+
+#content_div {
+    padding-top: 15px;
+    width: 1000px;
+    margin: 0 auto;
+    border: solid 1px black;
+}
+
+#left_title {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#left_title li span {
+    display: block;
+    font-size: 16px;
+    width: 100px;
+    line-height: 40px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.left_title_item_select {
+    background-color: #ED4040;
+    color: white;
+}
+
+.channel_item {
+    background-color: white;
+    color: 333;
+}
+
+
+#left_title li span:hover {
+    background-color: #ED4040;
+    color: white;
+}
+
+
+#conent_middle_div {
+    display: inline-block;
+    width: 600px;
+    border: solid 1px black;
+    vertical-align: top;
+}
+
+#banner ul {
+    float: right;
+    width: 50px;
+    height: 300px;
+    background-color: #222222;
+    text-align: center;
+}
+
+#banner li span:hover {
+    background-color: #ED4040;
+}
+
+#banner li span {
+    margin-top: 10px;
+    display: block;
+    font-size: 14px;
+    width: 50px;
+    color: white;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#banner img {
+    width: 550px;
+    height: 300px;
 }
