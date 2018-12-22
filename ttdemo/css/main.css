@@ -92,6 +92,16 @@ ul {
     vertical-align: top;
 }
 
+.title {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: '黑体';
+    color: red;
+    line-height: 40px;
+    text-align: center;
+}
+
 #left_title li span {
     display: block;
     font-size: 16px;
@@ -152,4 +162,117 @@ ul {
 #banner img {
     width: 550px;
     height: 300px;
+}
+
+#content_right {
+    display: inline-block;
+    width: 280px;
+}
+
+.search_div {
+    position: relative;
+}
+
+.search_div input {
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    box-sizing: border-box;
+    width: 280px;
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+}
+
+.search_div span {
+    width: 60px;
+    line-height: 40px;
+    position: absolute;
+    background-color: #208EDA;
+    right: 0;
+    top: 0;
+    text-align: center;
+    color: white;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+
+.normal_news_div li {
+    height: 110px;
+    margin-top: 10px;
+}
+
+.normal_news_div img {
+    width: 160px;
+    height: 110px;
+    vertical-align: middle;
+}
+
+.news_content {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.news_content a {
+    margin-left: 10px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    height: 30px;
+    font-size: 20px;
+}
+
+.news_content a:hover {
+    color: #208EDA;
+}
+
+.news_content_info {
+    margin-top: 6px;
+    position: relative;
+}
+
+.news_info1 {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 12px;
+    color: #456;
+    border: 1px solid #456;
+}
+
+.news_info2 {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.news_info3 {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #999;
+}
+
+.news_no_intes {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+.news_no_intes span {
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #ED4040;
+    border-radius: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: white;
+    display: none;
+}
+
+.news_no_intes img {
+    position: absolute;
+    right: 0;
+    width: 15px;
+    height: 15px;
 }
