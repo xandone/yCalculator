@@ -258,7 +258,14 @@ ul {
     right: 0;
 }
 
-.news_no_intes span {
+.news_no_intes img {
+    position: absolute;
+    right: 0;
+    width: 15px;
+    height: 15px;
+}
+
+.news_no_intes_show {
     font-size: 12px;
     text-align: center;
     line-height: 20px;
@@ -267,12 +274,21 @@ ul {
     padding-left: 4px;
     padding-right: 4px;
     color: white;
-    display: none;
+    display: inline-block;
+    pointer-events: none;
+    transition: all 1s;
+    transform: translateX(-100px);
 }
 
-.news_no_intes img {
-    position: absolute;
-    right: 0;
-    width: 15px;
-    height: 15px;
+.news_no_intes_hide {
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #ED4040;
+    border-radius: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: white;
+    pointer-events: none; //可以去除鼠标抖动，因为显示后遮住了img，导致触发了onmouseover
 }
