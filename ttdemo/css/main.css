@@ -25,6 +25,7 @@
 }
 
 #weather_details {
+    position: absolute;
     z-index: 10;
     display: none;
     width: 200px;
@@ -90,6 +91,7 @@ ul {
 #left_title {
     display: inline-block;
     vertical-align: top;
+    position: relative;
 }
 
 .title {
@@ -292,3 +294,13 @@ ul {
     color: white;
     pointer-events: none; //可以去除鼠标抖动，因为显示后遮住了img，导致触发了onmouseover
 }
+
+.left_title_more {
+    position: absolute;
+    width: 200px;
+    background-color: red;
+    bottom: 0;
+    right: -200px;
+}
+
+.left_title_more ul {}
