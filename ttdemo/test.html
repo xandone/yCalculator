@@ -18,6 +18,14 @@
     span {
         line-height: 40px;
     }
+
+    .li1 {
+        color: black;
+    }
+
+    .li2 {
+        color: red;
+    }
     </style>
 </head>
 
@@ -32,6 +40,36 @@
             <span>3333</span>
             <span>4444</span>
         </div>
+        <div>
+            <ul>
+                <li class="li1">数据1</li>
+                <li class="li1">数据2</li>
+                <li class="li1">数据3</li>
+                <li class="li1">数据4</li>
+                <li class="li1">数据5</li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+    // getElementsByClassName返回的数组，改变了元素className后被自动从该组剔除，
+    // getElementsByTagName则不会
+    var myli = document.getElementsByClassName('li1');
+    // var myli = document.getElementsByTagName('li');
+    var myli2 = myli;
+
+    for (var i = 0; i < myli.length; i++) {
+        myli[i].j = i;
+        myli[i].onclick = function() {
+            fn(this.j);
+        }
+    }
+
+    function fn(j) {
+        console.log(myli.length);
+        console.log(myli2.length);
+        myli[j].className = 'li2';
+    }
+    </script>
 </body>
 
 </html>
