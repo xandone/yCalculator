@@ -36,8 +36,8 @@
                 rows: 10
             },
             success: function(result) {
-                mytext.innerText = result.rows[0].content;
-               // mytext.append(result.rows[0].content);
+                // mytext.innerText = result.rows[0].content;
+               mytext.text(result.rows[40].content);
             },
             error: function(xhr, status, p3, p4) {
                 var err = "Error " + " " + status + " " + p3;

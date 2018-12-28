@@ -1,0 +1,51 @@
+.banner {
+    width: 800px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+
+.joke-list {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.joke-author{
+	float: right;
+}
+
+.joke-content{
+	margin-top: 10px;
+	margin-bottom: 6px;
+}
+
+.joke-author-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    border: 1px solid blue;
+}
+
+.joke-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.joke-date {
+    float: right;
+    font-size: 14px;
+    color: #999;
+}
+
+.helpful{
+	color: #555;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.helpful img{
+	width: 20px;
+	height: 20px;
+	margin-right: 4px;
+}
