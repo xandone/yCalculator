@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+    .textdiv {
+      /*  text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;*/
+    }
+
+    .mytext {
+        color: black;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="textdiv">
+        <span class="mytext"></span>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        var mytext = $('.mytext')[0];
+        $.ajax({
+            url: '/ycat/joke/list',
+            type: 'GET',
+            dataType: 'json',
+            data: {
+                page: 0,
+                rows: 10
+            },
+            success: function(result) {
+                mytext.innerText = result.rows[0].content;
+               // mytext.append(result.rows[0].content);
+            },
+            error: function(xhr, status, p3, p4) {
+                var err = "Error " + " " + status + " " + p3;
+                if (xhr.responseText && xhr.responseText[0] == "{")
+                    err = JSON.parse(xhr.responseText).message;
+                alert(err);
+            }
+
+        });
+
+    })
+    </script>
+</body>
+
+</html>
