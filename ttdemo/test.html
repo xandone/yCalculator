@@ -15,6 +15,23 @@
         vertical-align: top;
     }
 
+    .div3 {
+        color: #333;
+    }
+
+    .big {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #ccc;
+        margin: 100px auto 0 auto;
+    }
+
+    #demo {
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+
     span {
         line-height: 40px;
     }
@@ -25,6 +42,27 @@
 
     .li2 {
         color: red;
+    }
+
+    @keyframes ec-fade-in-r {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    .ec-fade-in-r {
+        animation: ec-fade-in-r 1s;
+    }
+
+    .move_transX {
+        transition: all 1s;
+        transform: translateX(-100%);
     }
     </style>
 </head>
@@ -49,6 +87,14 @@
                 <li class="li1">数据5</li>
             </ul>
         </div>
+        <div class="big">
+            <div class="" id="demo">
+            </div>
+        </div>
+        <div class="div3">
+            <span id="mouser">鼠标</span>
+            <span id="cont">啊啊啊啊啊</span>
+        </div>
     </div>
     <script type="text/javascript">
     // getElementsByClassName返回的数组，改变了元素className后被自动从该组剔除，
@@ -68,6 +114,14 @@
         console.log(myli.length);
         console.log(myli2.length);
         myli[j].className = 'li2';
+    }
+    var mouser = document.getElementById('mouser');
+    var cont = document.getElementById('demo');
+    mouser.onmouseover = function() {
+        cont.className = 'move_transX';
+    }
+    mouser.onmouseout = function() {
+        cont.className = '';
     }
     </script>
 </body>

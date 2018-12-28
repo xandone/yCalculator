@@ -255,9 +255,14 @@ ul {
 }
 
 .news_no_intes {
+    width: 80px;
+    height: 20px;
     display: inline-block;
     position: absolute;
     right: 0;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
 }
 
 .news_no_intes img {
@@ -268,7 +273,9 @@ ul {
 }
 
 .news_no_intes_show {
-    font-size: 12px;
+    position: absolute;
+    right: 0;
+    font-size: 6px;
     text-align: center;
     line-height: 20px;
     background-color: #ED4040;
@@ -278,13 +285,14 @@ ul {
     color: white;
     display: inline-block;
     pointer-events: none;
-    transition: all 1s;
-    transform: translateX(-100px);
+    animation: ec-fade-in-r 0.5s;
 }
 
 .news_no_intes_hide {
+    position: absolute;
+    right: 0;
     display: inline-block;
-    font-size: 12px;
+    font-size: 6px;
     text-align: center;
     line-height: 20px;
     background-color: #ED4040;
@@ -292,7 +300,24 @@ ul {
     padding-left: 4px;
     padding-right: 4px;
     color: white;
+    display: none;
     pointer-events: none; //可以去除鼠标抖动，因为显示后遮住了img，导致触发了onmouseover
+}
+
+@keyframes ec-fade-in-r {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.ec-fade-in-r {
+    animation: ec-fade-in-r 1s;
 }
 
 .left_title_more {
