@@ -3,7 +3,7 @@
 
 <head>
     <title></title>
-    <!-- <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script> -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <!-- <script type="text/javascript" src="../js/main.js"></script> -->
     <link rel="stylesheet" type="text/css" href="css/init.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -11,10 +11,21 @@
 
 <body>
     <div>
-        <div class="banner">
-            <a href="javascript:;">
-                <img src="" alt="">
+        <div id="banner" class="banner">
+            <a href="javascript:;" >
+                <img src="https://upload-images.jianshu.io/upload_images/2518499-f5c1aa291b65d334.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">
             </a>
+            <a href="javascript:;" class="hidden">
+                <img src="https://upload-images.jianshu.io/upload_images/2518499-0df6ef639c3c2ccf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">
+            </a>
+            <a href="javascript:;" class="hidden">
+                <img src="https://upload-images.jianshu.io/upload_images/2518499-87cb6cb05233b36d.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">
+            </a>
+            <ul class="banner-box">
+                <li class="banner-box-select"></li>
+                <li class="banner-box-bg"></li>
+                <li class="banner-box-bg"></li>
+            </ul>
         </div>
         <div id="joke-list" class="joke-list">
             <ul>
@@ -38,6 +49,36 @@
             </ul>
         </div>
     </div>
+    <script type="text/javascript">
+    $(function() {
+        var demo = $('.banner a');
+        var boxPoints = $('.banner-box li');
+        var currentIndex = 0;
+        startLoop();
+
+        function startLoop() {
+            var timer = setInterval(function() {
+                currentIndex++;
+                if (currentIndex > 2) {
+                    currentIndex = 0;
+                }
+
+                for (var i = 0; i < demo.length; i++) {
+                    $(demo[i]).removeClass();
+                    $(demo[i]).addClass('hidden');
+
+                    $(boxPoints[i]).removeClass('banner-box-select');
+                    $(boxPoints[i]).addClass('banner-box-bg');
+                }
+
+                $(demo[currentIndex]).addClass('block');
+                $(boxPoints[currentIndex]).addClass('banner-box-select');
+
+            }, 2000);
+        }
+
+    })
+    </script>
 </body>
 
 </html>
