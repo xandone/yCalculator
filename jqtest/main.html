@@ -3,23 +3,23 @@
 
 <head>
     <title></title>
-    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <!-- <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script> -->
     <!-- <script type="text/javascript" src="../js/main.js"></script> -->
-    <link rel="stylesheet" type="text/css" href="../css/init.css">
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/init.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
     <div>
         <div class="banner">
             <a href="javascript:;">
-        		<img src="" alt="">
-        	</a>
+                <img src="" alt="">
+            </a>
         </div>
         <div id="joke-list" class="joke-list">
-            <!--   <ul>
+            <ul>
                 <li>
-                    <div joke-item>
+                    <div class="joke-item">
                         <a class="joke-title" href="javascript:;">2018年的第一场雪</a>
                         <div class="joke-author">
                             <img class="joke-author-icon" src="imgs/headicon.jpg" alt="">
@@ -27,48 +27,17 @@
                         </div>
                         <div class="joke-content">
                             <span>
-                        	武汉市气象台预计，6日~10日，受高空西南气流、中低层切变线和地面较强冷空气南下影响，我市的阴雨雪天气将持续。其中，6日以降雨为主，7~9日，随着气温降至零下，我市由雨转为中到大雪，局部暴雪，将为今冬第一场降雪，南部可能伴有冻雨。
-                		</span>
+                            武汉市气象台预计，6日~10日，受高空西南气流、中低层切变线和地面较强冷空气南下影响，我市的阴雨雪天气将持续。其中，6日以降雨为主，7~9日，随着气温降至零下，我市由雨转为中到大雪，局部暴雪，将为今冬第一场降雪，南部可能伴有冻雨。
+                        </span>
                         </div>
                         <span class="helpful"><img src="imgs/zan.png" alt="">15</span>
                         <span class="helpful"><img src="imgs/comment_icon.png" alt="">3</span>
                         <span class="joke-date">2018-12-29 23:13</span>
                     </div>
                 </li>
-            </ul> -->
+            </ul>
         </div>
     </div>
-    <script type="text/javascript">
-    $(function() {
-        var jokeList = $('#joke-list');
-
-        getjokeList();
-
-        function getjokeList(page, count) {
-            $.ajax({
-                url: '/ycat/joke/list',
-                type: 'GET',
-                dataType: 'json',
-                data: {
-                    page: 0,
-                    rows: 10
-                },
-                success: function(result) {
-                    createJokeList(result.rows);
-                }
-            });
-        }
-
-
-        function createJokeList(result) {
-            console.log(result);
-            var jokeItemParent = jokeList.html('ul');
-            var jokeItem = jokeItemParent.html('li');
-            jokeItem.append(result.rows[0].content);
-        }
-
-    })
-    </script>
 </body>
 
 </html>
