@@ -11,7 +11,16 @@
 
 <body>
     <div>
-        <div id="banner" class="banner">
+        <div id="header" class="header">
+            <div class="header-center">
+                <div class="header-logo"><span>YCAT HOME</span></div>
+                <div class="header-user">
+                    <img src="https://upload-images.jianshu.io/upload_images/2518499-f5c1aa291b65d334.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">
+                    <span>狗蛋</span>
+                </div>
+            </div>
+        </div>
+        <div id=" banner" class="banner">
             <a href="javascript:;" >
                 <img src="https://upload-images.jianshu.io/upload_images/2518499-f5c1aa291b65d334.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">
             </a>
@@ -33,7 +42,15 @@
                     <div class="joke-item">
                         <a class="joke-title" href="javascript:;">2018年的第一场雪</a>
                         <div class="joke-author">
-                            <img class="joke-author-icon" src="imgs/headicon.jpg" alt="">
+                            <div class="joke-author-icon-root">
+                                <img id="joke-author-icon" class="joke-author-icon" src="imgs/headicon.jpg" alt="">
+                                <div id="joke-author-dialog" class="joke-author-dialog">
+                                    <img src="imgs/headicon.jpg" alt="">
+                                    <span class="author-dialog-name">狗蛋</span>
+                                    <div class="joke-dialog-line"></div>
+                                    <span class="author-dialog-say">2019年的第一场雪~</span>
+                                </div>
+                            </div>
                             <span>狗蛋</span>
                         </div>
                         <div class="joke-content">
@@ -54,6 +71,7 @@
         var demo = $('.banner a');
         var boxPoints = $('.banner-box li');
         var currentIndex = 0;
+
         startLoop();
 
         function startLoop() {
@@ -77,6 +95,19 @@
             }, 2000);
         }
 
+        $('#joke-author-icon').mouseover(function(event) {
+            /* Act on the event */
+            $('#joke-author-dialog').show('400', function() {
+
+            });
+        });
+
+        $('#joke-author-icon').mouseout(function(event) {
+            /* Act on the event */
+            $('#joke-author-dialog').hide('400', function() {
+
+            });
+        });
     })
     </script>
 </body>
